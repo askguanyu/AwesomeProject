@@ -1,0 +1,16 @@
+﻿@inject IViewLocalizer Localizer
+
+@model ErrorViewModel
+
+@{
+    var error = Model?.ErrorMessage;
+}
+
+@{ ViewData["Title"] = Localizer["Error"]; }
+
+<h3 class="text-danger">@ViewData["Title"]!</h3>
+<h4 class="text-danger">@Localizer["ErrorComment"]</h4>
+@if (error != null) {
+    <p>@Localizer["Details"]</p>
+    <p>@Model.ErrorMessage</p>
+}

@@ -1,0 +1,13 @@
+{
+  "name": "awesome-server",
+  "description": "Awesome Server",
+  "author": "Pavlos Papadopoulos",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.1",
+    "jquery-validation": "^1.15.1",
+    "jquery-validation-unobtrusive": "^3.2.6"
+  }
+}

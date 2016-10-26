@@ -1,0 +1,60 @@
+/*
+   VSCode tasks (Ctrl+P and type 'task')
+   
+   Restore .Net with:
+    - restore
+   Build .Net with:
+    - build
+   Exetute gulp tasks with:
+    - gulp
+*/
+{
+  "version": "0.1.0",
+  "isShellCommand": true,
+  "windows": {
+    "command": "cmd",
+    "args": [
+      "/c"
+    ]
+  },
+  "osx": {
+    "command": "sh",
+    "args": [
+      "-c"
+    ]
+  },
+  "linux": {
+    "command": "sh",
+    "args": [
+      "-c"
+    ]
+  },
+  "tasks": [
+    {
+      "taskName": "restore",
+      "suppressTaskName": true,
+      "args": [
+        "dotnet restore"
+      ],
+      "showOutput": "always"
+    },
+    {
+      "taskName": "build",
+      "suppressTaskName": true,
+      "args": [
+        "dotnet build ${workspaceRoot}/project.json"
+      ],
+      "isBuildCommand": true,
+      "problemMatcher": "$msCompile",
+      "showOutput": "always"
+    },
+    {
+      "taskName": "gulp",
+      "suppressTaskName": true,
+      "args": [
+        "node ${workspaceRoot}/node_modules/gulp/bin/gulp"
+      ],
+      "showOutput": "always"
+    }
+  ]
+}

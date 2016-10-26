@@ -1,0 +1,14 @@
+﻿@inject IViewLocalizer Localizer
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2>@Localizer["WelcomeBack"], @User.Identity.Name!</h2>
+    <p>@Localizer["CommentSignedIn"]</p>
+}
+else
+{
+    <h1>@Localizer["Hello"]!</h1>
+    <p>@Localizer["CommentSignedOut"]</p>
+    <p><a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg" role="button">@Localizer["CreateAccount"] &raquo;</a></p>
+}

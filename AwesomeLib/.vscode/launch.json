@@ -1,0 +1,15 @@
+/*
+   Attach to a running process with:
+    - attach
+*/
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command.pickProcess}"
+        }
+    ]
+}

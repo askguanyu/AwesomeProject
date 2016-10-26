@@ -1,0 +1,32 @@
+# Directories created from .Net build
+bin/
+obj/
+
+# Directory created from bower install
+bower_components/
+
+# Directory created from npm install
+node_modules/
+
+# Log files
+logs/
+
+# Directories and files copied from gulp build
+wwwroot/lib/
+wwwroot/fonts/
+wwwroot/css/min/
+
+# Publish folder
+publish/
+
+# Settings files
+appsettings.Staging.json
+appsettings.Production.json
+hosting.Staging.json
+hosting.Production.json
+
+# Certificate file
+awesome.pfx
+
+# File created from .Net restore
+project.lock.json

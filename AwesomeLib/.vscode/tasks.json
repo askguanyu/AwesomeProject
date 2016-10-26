@@ -1,0 +1,50 @@
+/*
+   VSCode tasks (Ctrl+P and type 'task')
+   
+   Restore .Net with:
+    - restore
+   Build .Net with:
+    - build
+*/
+{
+  "version": "0.1.0",
+  "isShellCommand": true,
+  "windows": {
+    "command": "cmd",
+    "args": [
+      "/c"
+    ]
+  },
+  "osx": {
+    "command": "sh",
+    "args": [
+      "-c"
+    ]
+  },
+  "linux": {
+    "command": "sh",
+    "args": [
+      "-c"
+    ]
+  },
+  "tasks": [
+    {
+      "taskName": "restore",
+      "suppressTaskName": true,
+      "args": [
+        "dotnet restore"
+      ],
+      "showOutput": "always"
+    },
+    {
+      "taskName": "build",
+      "suppressTaskName": true,
+      "args": [
+        "dotnet build ${workspaceRoot}/project.json"
+      ],
+      "isBuildCommand": true,
+      "problemMatcher": "$msCompile",
+      "showOutput": "always"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "buildOptions": {
+    "debugType": "portable"
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.1",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Serilog.Sinks.RollingFile": "3.0.1"
+  },
+  "frameworks": {
+    "netstandard1.6": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  }
+}

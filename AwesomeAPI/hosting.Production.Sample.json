@@ -1,0 +1,5 @@
+// This is a sample for a production environment hosting.json file
+// It supplements and overrides the hosting.json file
+{
+  "Urls": "https://0.0.0.0:5000"
+}

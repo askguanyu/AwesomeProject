@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @{
+        var title = ViewBag.Title != null ? " | " + ViewBag.Title.Value : "";
+    }
+
+    <title>Awesome!@title</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/min/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+              asp-fallback-href="~/lib/min/font-awesome.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/min/site.min.css" />
+    </environment>
+</head>
+
+<body>
+
+    <div>
+
+        <nav id="menu" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <img alt="Awesome!" src="~/img/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @await Html.PartialAsync("_CulturesPartial")
+                        @await Html.PartialAsync("_LoginPartial")
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <h4 class="text-info text-center">&copy; 2016 Awesome!</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery.js"></script>
+        <script src="~/lib/bootstrap.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+                asp-fallback-src="~/lib/min/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/min/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+    </environment>
+
+    @RenderSection("Scripts", false)
+
+</body>
+
+</html>

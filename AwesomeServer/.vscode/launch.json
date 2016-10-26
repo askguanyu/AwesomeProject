@@ -1,0 +1,109 @@
+/*
+   Start debugging for a specific environment with:
+    - launch development
+    - launch staging
+    - launch production
+   Attach to a running process with:
+    - attach
+   Start debugging for gulp tasks with:
+    - launch gulp
+*/
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "launch development",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\AwesomeServer.dll",
+      "cwd": "${workspaceRoot}",
+      "stopAtEntry": false,
+      "internalConsoleOptions": "openOnSessionStart",
+      "launchBrowser": {
+        "enabled": false,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "name": "launch staging",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\AwesomeServer.dll",
+      "cwd": "${workspaceRoot}",
+      "stopAtEntry": false,
+      "internalConsoleOptions": "openOnSessionStart",
+      "launchBrowser": {
+        "enabled": false,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    },
+    {
+      "name": "launch production",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\AwesomeServer.dll",
+      "cwd": "${workspaceRoot}",
+      "stopAtEntry": false,
+      "internalConsoleOptions": "openOnSessionStart",
+      "launchBrowser": {
+        "enabled": false,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    {
+      "name": "attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command.pickProcess}"
+    },
+    {
+      "name": "launch gulp",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+      "cwd": "${workspaceRoot}"
+    }
+  ]
+}

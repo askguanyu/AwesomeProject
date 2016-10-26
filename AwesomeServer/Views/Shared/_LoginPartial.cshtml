@@ -1,0 +1,21 @@
+﻿@inject IViewLocalizer Localizer
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <li>
+        <a asp-controller="Account" asp-action="SignOut">@Localizer["SignOut"]</a>
+    </li>
+}
+else
+{
+    <li>
+        <a asp-controller="Account" asp-action="SignIn">@Localizer["SignIn"]</a>
+    </li>
+    <li>
+        <p class="navbar-btn navbar-right">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">@Localizer["CreateAccount"]</a>
+        </p>
+    </li>
+}

@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <div class="container">
+        @await Html.PartialAsync("_HomePartial")
+    </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h3>User Claims</h3>
+    <dl>
+        @foreach (var claim in User.Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+        }
+    </dl>
+
+    var authScheme = "Identity.Application";
+    <h3>Cookies Properties</h3>
+    <dl>
+        @{
+            var props = (await Context.Authentication.GetAuthenticateInfoAsync(authScheme)).Properties;
+        }
+        @foreach (var item in props.Items)
+        {
+            <dt>@item.Key</dt>
+            <dd>@item.Value</dd>
+        }
+    </dl>
+}

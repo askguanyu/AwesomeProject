@@ -1,0 +1,5 @@
+// This is a sample for a staging environment hosting.json file
+// It supplements and overrides the hosting.json file
+{
+  "Urls": "http://0.0.0.0:5050"
+}

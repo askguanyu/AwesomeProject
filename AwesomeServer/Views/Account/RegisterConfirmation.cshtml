@@ -1,0 +1,6 @@
+@inject IViewLocalizer Localizer
+
+@{ ViewData["Title"] = Localizer["CreateAccount"]; }
+
+<p>@Localizer["EmailConfirmed"]</p>
+<a asp-controller="Account" asp-action="SignIn">@Localizer["SignIn"]</a>

@@ -1,0 +1,6 @@
+# Directories created from .Net build
+bin/
+obj/
+
+# File created from .Net restore
+project.lock.json
