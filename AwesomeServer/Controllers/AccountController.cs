@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
+using AwesomeLib;
+using AwesomeLib.Services.Interfaces;
 using AwesomeServer.Controllers.Attributes;
 using AwesomeServer.Services;
 using AwesomeServer.Services.Interfaces;
 using AwesomeServer.ViewModels;
-using AwesomeLib;
-using AwesomeLib.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

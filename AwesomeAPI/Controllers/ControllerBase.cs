@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using AwesomeLib;
-using AwesomeLib.Services.Interfaces;
 using AwesomeAPI.Controllers.Attributes;
 using AwesomeAPI.Filters;
 using AwesomeAPI.Models;
 using AwesomeAPI.Repositories.Interfaces;
 using AwesomeAPI.Services.Interfaces;
 using AwesomeAPI.ViewModels;
+using AwesomeLib;
+using AwesomeLib.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;

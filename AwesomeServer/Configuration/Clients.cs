@@ -16,8 +16,19 @@ namespace AwesomeServer.Configuration
             {
                 new Client
                 {
+                    ClientId = "oauthClient",
+                    ClientName = "OAuth Client",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret(Configuration["Secret"].Sha256())
+                    },
+                    AllowedScopes = new List<string> {"AwesomeAPI"}
+                },
+                new Client
+                {
                     ClientId = "openIdConnectClient",
-                    ClientName = "Open Id Connect Client",
+                    ClientName = "OpenId Connect Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = new List<string>
                     {
